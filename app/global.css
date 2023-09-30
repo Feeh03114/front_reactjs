@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::-webkit-scrollbar {
+    z-index: 100;
+    width: 0.2rem;
+    display: none;
+  }
+  
