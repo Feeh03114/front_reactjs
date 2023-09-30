@@ -38,8 +38,13 @@ export default function Users():JSX.Element {
     }
 
     const deleteUser = (id: number) => {
-        const newUsers = users.filter((user) => user.id !== id);
-        setUsers(newUsers);
+        try {
+            api.delete(`usuarios/${id}`);
+            toast.success('Usuário deletado com sucesso');
+            loadingUsers();
+        } catch (error) {
+            toast.error('Erro ao deletar o usuário');
+        }
     }
 
     const onSave = async (data: User) => {
